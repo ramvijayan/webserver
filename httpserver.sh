@@ -1,5 +1,7 @@
 #!/bin/bash
-if ["yum list installed|grep \"httpd\""];then
+yum list installed |grep httpd 
+if [ $? == '0' ]
+then
  echo "package has been installed"
 else
   yum install httpd -y
